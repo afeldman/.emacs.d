@@ -4,3 +4,9 @@
 [submodule "other/emacs-color-themes"]
 	path = other/emacs-color-themes
 	url = https://github.com/owainlewis/emacs-color-themes.git
+[submodule "other/Enhanced-Ruby-Mode"]
+	path = other/Enhanced-Ruby-Mode
+	url = https://github.com/jacott/Enhanced-Ruby-Mode.git
+[submodule "other/elisp"]
+	path = other/elisp
+	url = https://github.com/zenspider/elisp.git
