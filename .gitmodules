@@ -1,3 +1,6 @@
-[submodule "emacs-color-themes"]
-	path = emacs-color-themes
+[submodule "other/go-mode"]
+	path = other/go-mode
+	url = https://github.com/dominikh/go-mode.el.git
+[submodule "other/emacs-color-themes"]
+	path = other/emacs-color-themes
 	url = https://github.com/owainlewis/emacs-color-themes.git
