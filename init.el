@@ -19,7 +19,6 @@
 ;;(require 'setup-mail)
 
 
-
 ;Syntax-Highlighting
 (global-font-lock-mode t)
 

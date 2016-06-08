@@ -1,5 +1,6 @@
 (add-to-list 'load-path "~/.emacs.d/module")
 (add-to-list 'load-path "~/.emacs.d/other")
+(add-to-list 'load-path "~/.emacs.d/emacs-color-themes")
 
 ;; Extra bin folders
 (add-to-list 'exec-path "/usr/local/bin")
