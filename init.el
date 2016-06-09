@@ -4,11 +4,11 @@
 (require 'compatibility)
 (require 'paths)
 (require 'keys)
+(require 'elget)
+(require 'packages)
 
 ;;(require 'setup-scratch-message)
 ;;(require 'setup-backup)
-;;(require 'setup-elget)
-;;(require 'setup-packages)
 ;;(require 'setup-helpers)
 ;;(require 'setup-hippie-expand)
 ;;(require 'setup-mode-line)
@@ -19,3 +19,4 @@
 ;; (require 'movelines)
 ;;(require 'setup-mail)
 
+(provide 'init)
