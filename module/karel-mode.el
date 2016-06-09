@@ -86,7 +86,7 @@
 ;;;###autoload
 (define-derived-mode karel-mode fundamental-mode
   "kl mode"
-  "Major mode for editing kl (Karel Programming Language)…"
+  "Major mode for editing kl (Karel Programming Language)"
 
   ;; code for syntax highlighting
   (setq font-lock-defaults '((karel-font-lock-keywords))))

@@ -10,3 +10,6 @@
 [submodule "other/elisp"]
 	path = other/elisp
 	url = https://github.com/zenspider/elisp.git
+[submodule "other/emacs.d"]
+	path = other/emacs.d
+	url = https://github.com/afeldman/emacs.d.git
