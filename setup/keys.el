@@ -1,9 +1,3 @@
-;; Leader keys
-(evil-leader/set-key
-  "e" 'find-file
-  "b" 'switch-to-buffer
-  "k" 'kill-buffer)
-
 ;; Extra keybindings
 (global-set-key (kbd "C-x C-s") 'save-buffer-always)
 (global-set-key (kbd "C-x f") 'find-file-in-project)
@@ -49,9 +43,6 @@
 (global-set-key (kbd "C-c C-<left>") 'windmove-left)
 (global-set-key (kbd "C-c C-<up>") 'windmove-up)
 (global-set-key (kbd "C-c C-<down>") 'windmove-down)
-
-;; Fix evil stuff
-(define-key evil-insert-state-map (kbd "C-k") nil)
 
 ; shift-pageUp/pageDown scrolls other window
 (global-set-key (quote [S-prior]) (quote scroll-other-window-down))

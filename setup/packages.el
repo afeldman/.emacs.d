@@ -11,7 +11,6 @@
         evil-surround
         evil-leader
         evil-exchange
-        jell-theme
         company-mode
         auto-complete
         enh-ruby-mode
@@ -19,7 +18,6 @@
         yaml-mode
         markdown-mode
         rspec-mode
-        jekyll-el
         ag
         bundler
         nyan-mode
@@ -30,16 +28,12 @@
         magit
         git-timemachine
         web-mode
-        puggle-utils
         dash
         s
         smartparens
         clj-refactor
-        maps
         guide-key
-        pivotal
         typed-clojure-mode
-        elixir-mode
         ace-jump-mode
         twittering-mode
         emacs-w3m
@@ -52,7 +46,6 @@
         jinja2-mode
         rust-mode
         flymake-easy
-        flymake-rust
         org-present
         tuareg-mode
         org-trello
