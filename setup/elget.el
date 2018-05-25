@@ -12,4 +12,8 @@
   (package-install 'el-get)
   (require 'el-get))
 
+(add-to-list 'el-get-recipe-path "~/.emacs.d/el-get-user/recipes")
+(add-to-list 'el-get-user-package-directory "~/.emacs.d/el-get-user/el-get-init-files")
+(el-get 'sync)
+
 (provide 'elget)

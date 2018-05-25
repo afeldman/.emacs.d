@@ -1,7 +1,3 @@
-;;(require 'el-get)
-(add-to-list 'el-get-recipe-path "~/.emacs.d/el-get-user/recipes")
-(el-get 'sync)
-
 (setq
  my-packages
  '(el-get
