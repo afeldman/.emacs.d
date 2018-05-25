@@ -1,70 +1,78 @@
-(setq my-packages
-      '(rainbow-delimiters
-        coffee-mode
-        paredit
-        cider
-        find-file-in-project
-        smex
-        ido-ubiquitous
-        undo-tree
-        evil
-        evil-surround
-        evil-leader
-        evil-exchange
-        company-mode
-        auto-complete
-        enh-ruby-mode
-        scss-mode
-        yaml-mode
-        markdown-mode
-        rspec-mode
-        ag
-        bundler
-        nyan-mode
-        multiple-cursors
-        ;;smooth-scroll
-        ;;emacs-w3m
-        expand-region
-        cl-lib
-        magit
-        git-timemachine
-        web-mode
-        dash
-        s
-        smartparens
-        clj-refactor
-        guide-key
-        typed-clojure-mode
-        ace-jump-mode
-        twittering-mode
-        bbdb
-        gist
-        haskell-mode
-        wgrep
-        restclient
-        feature-mode
-        jinja2-mode
-        rust-mode
-        flymake-easy
-        org-present
-        tuareg-mode
-        org-trello
-        sass-mode
-        magit))
+;;(require 'el-get)
+(add-to-list 'el-get-recipe-path "~/.emacs.d/el-get-user/recipes")
+(el-get 'sync)
 
-(el-get 'sync my-packages)
+(setq
+ my-packages
+ '(el-get
+   ace-jump-mode
+   ag
+   auto-complete
+   bundler
+   bbdb
+   cider
+   clj-refactor
+   cl-lib
+   coffee-mode
+   company-mode
+   enh-ruby-mode
+   escreen
+   expand-region
+   evil
+   evil-surround
+   evil-leader
+   evil-exchange
+   find-file-in-project
+   go-mode
+   rainbow-delimiters
+   paredit
+   smex
+   ido-ubiquitous
+   undo-tree
+   scss-mode
+   yaml-mode
+   markdown-mode
+   rspec-mode
+   nyan-mode
+   multiple-cursors
+   magit
+   git-timemachine
+   web-mode
+   dash
+   s
+   smartparens
+   guide-key
+   typed-clojure-mode
+   twittering-mode
+   gist
+   wgrep
+   restclient
+   feature-mode
+   jinja2-mode
+   flymake-easy
+   org-present
+   tuareg-mode
+   org-trello
+   sass-mode
+   magit))
 
-;; Haskell
-;;(el-get-bundle haskell/haskell-mode)
-;;(el-get-bundle ghc-mod)
+;;(when (el-get-executable-find "cvs")
+;;  (loop for p in '(smooth-scroll
+;;                   emacs-w3m
+;;                   emacs-goodies-el
+;;                   )
+;;  do (add-to-list 'my:el-get-packages p)))
 
-;; C/C++
-;;(el-get-bundle clang-format
-;;  :type http
-;;  :url "https://llvm.org/svn/llvm-project/cfe/trunk/tools/clang-format/clang-format.el")
+;;(when (el-get-executable-find "svn")
+;;  (loop for p in '(psvn    		; M-x svn-status
+;;		   yasnippet		; powerful snippet mode
+;;		   )
+;;	do (add-to-list 'my:el-get-packages p)))
 
-;; Go
-;;(el-get-bundle go-mode)
+;;(setq my:el-get-packages
+;;      (append my:el-get-packages
+;;              (mapcar #'el-get-source-name el-get-sources)))
+
 ;;(el-get-bundle golint
 ;;               :type http
 ;;               :url "https://raw.githubusercontent.com/golang/lint/master/misc/emacs/golint.el")
@@ -113,5 +121,7 @@
 ;;               :name quickrun)
 ;;(el-get-bundle syohex/emacs-eshellutil
 ;;               :name eshellutil)
+
+(el-get 'sync my-packages)
 
 (provide 'packages)

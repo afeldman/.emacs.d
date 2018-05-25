@@ -1,5 +1,4 @@
-;; add the setup path to the load path on startup
-;; all configuration setupscreens are included in this folder
+;; add the configuration setting path
 
 ;; Added by Package.el.  This must come before configurations of
 ;; installed packages.  Don't delete this line.  If you don't want it,
@@ -15,11 +14,13 @@
 
 ;; turn on the setups
 (require 'sanity)
-(require 'compatibility)
 (require 'paths)
-(require 'keys)
 (require 'elget)
 (require 'packages)
+(require 'compatibility)
+(require 'keys)
+
+(require 'smexs)
 
 ;;(require 'setup-scratch-message)
 ;;(require 'setup-backup)
