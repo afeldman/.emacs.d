@@ -1,7 +1,7 @@
 ;Syntax-Highlighting
 (global-font-lock-mode t)
 
-;higlight the marked region (C-SPC) and use commands (like
+; higlight the marked region (C-SPC) and use commands (like
 ; latex-environment) on current region.
 (transient-mark-mode t)
 

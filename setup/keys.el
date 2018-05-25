@@ -1,5 +1,4 @@
 ;; Extra keybindings
-(global-set-key (kbd "C-x C-s") 'save-buffer-always)
 (global-set-key (kbd "C-x f") 'find-file-in-project)
 (global-set-key (kbd "M-/") 'hippie-expand)
 (global-set-key (kbd "C-x C-b") 'ibuffer)
@@ -48,7 +47,8 @@
 (global-set-key (quote [S-prior]) (quote scroll-other-window-down))
 (global-set-key (quote [S-next]) (quote scroll-other-window))
 
-; F6 stores a position in a file F7 brings you back to this position
+;; F6 stores a position in a file
+;; F7 brings you back to this position
 (global-set-key [f6] '(lambda () (interactive) (point-to-register ?1)))
 (global-set-key [f7] '(lambda () (interactive) (register-to-point ?1)))
 

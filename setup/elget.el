@@ -1,18 +1,22 @@
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
 
-;; Extra package repos
-(setq package-archives '())
-(add-to-list 'package-archives '("melpa-stable" . "http://melpa-stable.milkbox.net/packages/") t)
+(unless (require 'el-get nil t)
+  (url-retrieve
+   "https://github.com/dimitri/el-get/raw/master/el-get-install.el"
+   (lambda (s)
+     (end-of-buffer)
+     (eval-print-last-sexp))))
 
-(unless (require 'el-get nil 'noerror)
-  (with-current-buffer
-      (url-retrieve-synchronously
-       "https://raw.github.com/dimitri/el-get/master/el-get-install.el")
-    (goto-char (point-max))
-    (eval-print-last-sexp)))
+;;(unless (require 'el-get nil 'noerror)
+;;  (require 'package)
+;;  (add-to-list 'package-archives
+;;               '("melpa" . "http://melpa.org/packages/"))
+;;  (package-refresh-contents)
+;;  (package-initialize)
+;;  (package-install 'el-get)
+;;  (require 'el-get))
 
-;; TODO: create el-get-user/recipes and el-get-user/init
 (add-to-list 'el-get-recipe-path "~/.emacs.d/el-get-user/recipes")
-(setq-default el-get-user-package-directory "~/.emacs.d/el-get-user/init")
+;;(el-get 'sync)
 
 (provide 'elget)
