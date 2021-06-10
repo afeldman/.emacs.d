@@ -2,7 +2,7 @@
 
 ;; Extra bin folders
 (add-to-list 'exec-path "/usr/local/bin")
-(add-to-list 'exec-path "~/local/bin")
+(add-to-list 'exec-path "~/.local/bin")
 
 ;; Path to binary files
 (setq-default ispell-program-name "/usr/bin/aspell")

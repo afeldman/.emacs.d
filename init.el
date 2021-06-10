@@ -8,19 +8,14 @@
 (add-to-list 'load-path "~/.emacs.d/setup")
 
 ;; turn on the setups
+(require 'elget)
 (require 'sanity)
 (require 'compatibility)
 (require 'keys)
-
 (require 'paths)
-(require 'elget)
 (require 'packages)
 
 (require 'smexs)
-
-(add-to-list 'package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
-                                 ("marmalade" . "http://marmalade-repo.org/packages/")
-                                 ("melpa" . "http://melpa.milkbox.net/packages/")))
 
 ;; start emacs in server mode.
 ;; This might minimize the time if you are using a lot of packages.

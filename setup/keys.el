@@ -26,7 +26,7 @@
 (global-set-key (kbd "C-x C-p") 'ag-project)
 
 ;; Smex
-(global-set-key (kbd "M-x") 'smex)
+(global-set-key (kbd "C-x s") 'smex)
 
 ;; Breadcrumbs
 (global-set-key (kbd "C-c b SPC") 'bc-set)
