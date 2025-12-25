@@ -29,32 +29,13 @@
 
 ;;; Code:
 
-;; Bootstrap straight.el package manager
-(defvar bootstrap-version)
-(let ((bootstrap-file
-       (expand-file-name "straight/repos/straight.el/bootstrap.el" user-emacs-directory))
-      (bootstrap-version 6))
-  (unless (file-exists-p bootstrap-file)
-    (with-current-buffer
-        (url-retrieve-synchronously
-         "https://raw.githubusercontent.com/radian-software/straight.el/develop/install.el"
-         'silent 'inhibit-cookies)
-      (goto-char (point-max))
-      (eval-print-last-sexp)))
-  (load bootstrap-file nil 'nomessage))
+;; NOTE: straight.el and use-package are now loaded in init.el
+;; This file no longer needs to bootstrap them
 
-;; macOS Homebrew paths (ARM64 + Intel compatibility)
-(when (eq system-type 'darwin)
-  (add-to-list 'exec-path "/opt/homebrew/bin")      ;; Apple Silicon
-  (add-to-list 'exec-path "/usr/local/bin")         ;; Intel
-  (setenv "PATH" (concat (getenv "PATH") ":/opt/homebrew/bin:/usr/local/bin")))
-
-;; Install use-package and enable straight.el integration
-(straight-use-package 'use-package)
-;; CRITICAL: Enable :straight keyword in use-package
-(setq straight-use-package-by-default nil)  ;; Explicit :straight required
-(eval-when-compile
-  (require 'use-package))
+;; macOS Homebrew paths (handled in init.el, kept here for reference)
+;; (when (eq system-type 'darwin)
+;;   (add-to-list 'exec-path "/opt/homebrew/bin")
+;;   (add-to-list 'exec-path "/usr/local/bin"))
 
 ;;; ZIL Engine Installation
 
@@ -63,7 +44,7 @@
              :host github
              :repo "afeldman/emacs-zmachine"
              :branch "master"
-             :files ("elisp/*.el" "emacs-zmachine-pkg.el" "README.md"))
+             :files ("elisp/*.el" "emacs-zmachine-pkg.el"))
   :config
   (message "emacs-zmachine (ZIL engine) loaded successfully."))
 
@@ -74,7 +55,7 @@
              :host github
              :repo "afeldman/zork-emacs"
              :branch "master"
-             :files ("elisp/*.el" "zork-emacs-pkg.el" "README.md"))
+             :files ("elisp/*.el" "zork-emacs-pkg.el"))
   :commands (zork-play-game zork-i zork-ii zork-iii)
   :config
   (message "Zork trilogy loaded! Use M-x zork-play-game to start."))
