@@ -49,9 +49,12 @@
   (add-to-list 'exec-path "/usr/local/bin")         ;; Intel
   (setenv "PATH" (concat (getenv "PATH") ":/opt/homebrew/bin:/usr/local/bin")))
 
-;; Install use-package for cleaner configuration (optional)
+;; Install use-package and enable straight.el integration
 (straight-use-package 'use-package)
-(setq straight-use-package-by-default t)
+;; CRITICAL: Enable :straight keyword in use-package
+(setq straight-use-package-by-default nil)  ;; Explicit :straight required
+(eval-when-compile
+  (require 'use-package))
 
 ;;; ZIL Engine Installation
 
@@ -78,13 +81,17 @@
 
 ;;; Keybindings (optional)
 
-;; Quick launcher for Zork games
-(global-set-key (kbd "C-c z") 'zork-play-game)
+;; NOTE: Using C-c C-z as prefix to avoid conflicts
+;; C-c z conflicts with single key + prefix requirement
 
-;; Individual game shortcuts
-(global-set-key (kbd "C-c z 1") 'zork-i)
-(global-set-key (kbd "C-c z 2") 'zork-ii)
-(global-set-key (kbd "C-c z 3") 'zork-iii)
+;; Quick launcher for Zork games
+(global-set-key (kbd "C-c C-z") 'zork-play-game)
+
+;; Individual game shortcuts (use prefix C-c C-z then number)
+;; For direct shortcuts, use longer sequences:
+(global-set-key (kbd "C-c M-z 1") 'zork-i)
+(global-set-key (kbd "C-c M-z 2") 'zork-ii)
+(global-set-key (kbd "C-c M-z 3") 'zork-iii)
 
 ;;; Customization (optional)
 
