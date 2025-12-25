@@ -4,6 +4,27 @@
 ;; You may delete these explanatory comments.
 (package-initialize)
 
+;;; macOS Configuration
+;; Homebrew paths (ARM64 Apple Silicon + Intel compatibility)
+(when (eq system-type 'darwin)
+  (add-to-list 'exec-path "/opt/homebrew/bin")      ;; Apple Silicon
+  (add-to-list 'exec-path "/usr/local/bin")         ;; Intel
+  (setenv "PATH" (concat (getenv "PATH") ":/opt/homebrew/bin:/usr/local/bin")))
+
+;;; straight.el Bootstrap
+(defvar bootstrap-version)
+(let ((bootstrap-file
+       (expand-file-name "straight/repos/straight.el/bootstrap.el" user-emacs-directory))
+      (bootstrap-version 6))
+  (unless (file-exists-p bootstrap-file)
+    (with-current-buffer
+        (url-retrieve-synchronously
+         "https://raw.githubusercontent.com/radian-software/straight.el/develop/install.el"
+         'silent 'inhibit-cookies)
+      (goto-char (point-max))
+      (eval-print-last-sexp)))
+  (load bootstrap-file nil 'nomessage))
+
 ;; add the configuration setting path
 (add-to-list 'load-path "~/.emacs.d/setup")
 
@@ -16,6 +37,9 @@
 (require 'packages)
 
 (require 'smexs)
+
+;; Load Zork trilogy via straight.el
+(load "~/.emacs.d/setup/straight-zork.el")
 
 ;; start emacs in server mode.
 ;; This might minimize the time if you are using a lot of packages.
