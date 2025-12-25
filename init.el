@@ -43,7 +43,8 @@
 (require 'compatibility)
 (require 'keys)
 (require 'paths)
-(require 'elget)
+;; NOTE: elget.el disabled - uses package.el which conflicts with straight.el
+;; (require 'elget)
 ;; NOTE: packages.el disabled - conflicts with straight.el
 ;; Use straight.el or use-package instead for package management
 ;; (require 'packages)
