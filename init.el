@@ -2,7 +2,8 @@
 ;; installed packages.  Don't delete this line.  If you don't want it,
 ;; just comment it out by adding a semicolon to the start of the line.
 ;; You may delete these explanatory comments.
-(package-initialize)
+;; NOTE: Commented out - using straight.el instead
+;; (package-initialize)
 
 ;;; macOS Configuration
 ;; Homebrew paths (ARM64 Apple Silicon + Intel compatibility)
@@ -34,7 +35,9 @@
 (require 'keys)
 (require 'paths)
 (require 'elget)
-(require 'packages)
+;; NOTE: packages.el disabled - conflicts with straight.el
+;; Use straight.el or use-package instead for package management
+;; (require 'packages)
 
 (require 'smexs)
 
